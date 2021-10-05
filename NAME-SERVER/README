@@ -1,0 +1,2 @@
+Para compilar el servidor usar:
+cc services.c skeleton.c utils.c -o name-server
