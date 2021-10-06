@@ -30,5 +30,4 @@ int connection(int socket_desc); // esperar a los clientes
 int close(int sock);
 
 // servicio(s)
-int store(char *m);
 SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float efectivoDisponible);

@@ -32,6 +32,5 @@ int connection(int port);
 int close(int sock);
 
 // remote services
-int store(char *m);
 SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float efectivoDisponible);
 int find_service(int id);
