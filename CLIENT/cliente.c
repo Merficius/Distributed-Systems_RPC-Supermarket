@@ -26,21 +26,20 @@ int main(int argc, char *argv[])
 	if (argc != 5)
 	{
 		fprintf(stderr,
-				"Uso: %s <service> <idProducto> <cantidad> <efectivoDisponible>\n", argv[0]);
+				"Uso: %s <servicio> <idProducto> <cantidad> <efectivoDisponible>\n", argv[0]);
 		exit(1);
 	}
-	
+
 	idProducto = atoi(argv[2]);
 	cantidad = atoi(argv[3]);
 	efectivoDisponible = atof(argv[4]);
 
 	int port = find_service(atoi(argv[1]));
-	sock = connection(port); // remote invocation
+	sock = connection(port);														// remote invocation
 	superama = comprarProducto(superama, idProducto, cantidad, efectivoDisponible); // as if it was a local call!
-//	int result = updatePassword(m); // as if it was a local call!
-	//printf("Resultado recibido por el cliente: %d\n", result);
 
 	printf("El mensaje fue almacenado\n");
 	close(sock);
+
 	return 1;
 }

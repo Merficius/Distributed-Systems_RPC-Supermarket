@@ -1,1 +1,1 @@
-cc cliente.c stub.c utilerias.c -o client
+cc cliente.c adapter_clnt.c utilerias.c -o cliente

@@ -30,3 +30,32 @@ int connection(int port)
     puts("Connected\n");
     return sock;
 }
+
+int find_service(int id)
+{
+    int read_size, port, proc = 2; // busqueda de servidor
+    int sock = connection(PORTMAPPER);
+
+    send(sock, &proc, sizeof(proc), 0);
+    if (send(sock, &id, sizeof(id), 0) < 0)
+    {
+        puts("Send failed");
+        exit(1);
+    }
+
+    //recibir el puerto del servidor
+    read_size = recv(sock, &port, sizeof(port), 0);
+
+    if (read_size == 0)
+    {
+        puts("Client disconnected");
+        fflush(stdout);
+    }
+    else if (read_size == -1)
+    {
+        perror("recv failed");
+    }
+
+    close(sock);
+    return port;
+}

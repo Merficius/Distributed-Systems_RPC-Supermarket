@@ -22,20 +22,16 @@ typedef struct
 
 typedef struct
 {
-    char* nombre;
+    char *nombre;
     int numeroDePersonas;
     PRODUCTO productos[2];
 } SUPERMERCADO;
 
-
-
 // utilities
-
 int connection(int port);
 int close(int sock);
 
 // remote services
-
 int store(char *m);
 SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float efectivoDisponible);
 int find_service(int id);
