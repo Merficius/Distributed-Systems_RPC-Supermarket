@@ -11,7 +11,8 @@
 #define PORT_NUM 1111
 #define TABLE_SIZE 10
 
-typedef struct {
+typedef struct
+{
     int id;
     int port;
 } LOCATION;
@@ -25,4 +26,4 @@ int close(int sock);
 // servicios
 
 void register_service(int id, int port);
-int find_service(int id);                       // regresa el puerto del servicio
+int find_service(int id); // regresa el puerto del servicio

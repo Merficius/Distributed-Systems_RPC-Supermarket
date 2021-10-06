@@ -1,4 +1,3 @@
-
 /* services.c: Código para el servidor de nombres */
 
 #include "server.h"

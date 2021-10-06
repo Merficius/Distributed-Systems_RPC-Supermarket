@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
     // loop infinito
     while (1)
     {
-
         int id, port;
         int client_sock = connection(socket_desc);
         int proc = recv_integer(client_sock);
