@@ -6,7 +6,7 @@ SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float
 
 	if (cantidad > s.productos[indiceDeProducto].cantidadDisponible)
 	{
-		printf("No hay suficiente productos disponibles :(\n");
+		printf("No hay suficientes productos disponibles :(\n");
 		return s;
 	}
 

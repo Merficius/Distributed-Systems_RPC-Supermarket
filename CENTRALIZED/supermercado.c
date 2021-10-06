@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	cantidad = atoi(argv[3]);
 	efectivoDisponible = atof(argv[4]);
 
-	superama = comprarProducto(superama, idProducto, cantidad, efectivoDisponible); // as if it was a local call!
+	superama = comprarProducto(superama, idProducto, cantidad, efectivoDisponible); 
 
 	FILE *write_file = fopen("superama.txt", "w"); // write only
 
@@ -69,7 +69,7 @@ SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float
 
 	if (cantidad > s.productos[indiceDeProducto].cantidadDisponible)
 	{
-		printf("No hay suficiente productos disponibles :(\n");
+		printf("No hay suficientes productos disponibles :(\n");
 		return s;
 	}
 

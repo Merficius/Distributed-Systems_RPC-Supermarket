@@ -17,4 +17,3 @@ typedef struct
 } SUPERMERCADO;
 
 SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float efectivoDisponible);
-int find_service(int id);
