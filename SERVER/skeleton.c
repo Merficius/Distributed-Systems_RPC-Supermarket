@@ -1,7 +1,6 @@
 #include "servidor.h"
 
 void register_service(int id, int port);
-
 SUPERMERCADO recv_messages(int client_sock);
 void send_result(int client_sock, SUPERMERCADO s);
 
@@ -25,16 +24,13 @@ int main(int argc, char *argv[])
         float efectivoDisponible;
 
         SUPERMERCADO s = recv_messages(client_sock);
-        //printf("received: %s\n", m);
-printf("hola5\n");
+
         recv(client_sock, &idProducto, sizeof(idProducto), 0);
         recv(client_sock, &cantidad, sizeof(cantidad), 0);
         recv(client_sock, &efectivoDisponible, sizeof(efectivoDisponible), 0);
-        
-
+    
         s = comprarProducto(s, idProducto, cantidad, efectivoDisponible);
-        //int value = store(m);
-        //free(m);
+
         send_result(client_sock, s);
     }
 
@@ -84,44 +80,12 @@ SUPERMERCADO recv_messages(int client_sock)
     }
 
     printf("recibiendo por server: %s, %d, %d, %d, %f, %d, %d, %f\n", s.nombre, s.numeroDePersonas, s.productos[0].id, s.productos[0].cantidadDisponible, s.productos[0].costo, s.productos[1].id, s.productos[1].cantidadDisponible, s.productos[1].costo);
-    // // receive the message length from client
-    // read_size = recv(client_sock, &message1,
-    //                  sizeof(message1), 0);
-    // str = "";
-    // read_size = recv(client_sock, &message2,
-    //                  sizeof(message2), 0);
-    // read_size = recv(client_sock, &message,
-    //                  sizeof(message), 0);
-    // printf("%d, %d, %f", message1, message2, message);
-    // dynamic memory allocation to store the message
-    //message = recv(client_sock, &message, sizeof(message), 0);
-    //message = (char *)malloc(length);
-    //read_size = recv(client_sock, message, message, 0);
-    //read_size = 2;
-    // if (read_size == 0)
-    // {
-    //     puts("Client disconnected");
-    //     fflush(stdout);
-    // }
-    // else if (read_size == -1)
-    // {
-    //     perror("recv failed");
-    // }
 
     return s;
 }
 
 void send_result(int client_sock, SUPERMERCADO s)
 {
-    // printf("server_result: %d\n", value);
-
-    // // send result to the client
-    // if (send(client_sock, &value, sizeof(value), 0) < 0)
-    // {
-    //     puts("Send failed");
-    //     exit(1);
-    // }
-    //printf("sending")
     char *nombre = s.nombre;
     int length = strlen(nombre);
     send(client_sock, &length, sizeof(length), 0);

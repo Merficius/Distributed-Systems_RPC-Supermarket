@@ -16,8 +16,9 @@ SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float
 	if (efectivoDisponible >= costoTotal)
 	{
 		s.productos[indiceDeProducto].cantidadDisponible -= cantidad;
-		printf("El cambio para el cliente es de: %f", efectivoDisponible - costoTotal);
-	} else 
+		printf("El cambio para el cliente es de: %f\n", efectivoDisponible - costoTotal);
+	}
+	else
 	{
 		printf("No te alcanza :(\n");
 	}

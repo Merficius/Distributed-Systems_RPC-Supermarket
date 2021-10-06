@@ -18,20 +18,17 @@ typedef struct
 
 typedef struct
 {
-    char* nombre;
+    char *nombre;
     int numeroDePersonas;
     PRODUCTO productos[2];
 } SUPERMERCADO;
 
-
 // utilerias
-
 int portmapper(char *host);      // conexión con servidor de nombres
 int initialization();            // inicialización del servicio
 int connection(int socket_desc); // esperar a los clientes
 int close(int sock);
 
 // servicio(s)
-
 int store(char *m);
 SUPERMERCADO comprarProducto(SUPERMERCADO s, int idProducto, int cantidad, float efectivoDisponible);
