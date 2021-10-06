@@ -1,4 +1,3 @@
-
 #include "cliente.h"
 
 extern char *host;
