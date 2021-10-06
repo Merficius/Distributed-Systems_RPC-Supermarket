@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,12 +17,10 @@ typedef struct
 } LOCATION;
 
 // utilerias
-
 int initialization();
 int connection(int socket_desc);
 int close(int sock);
 
 // servicios
-
 void register_service(int id, int port);
 int find_service(int id); // regresa el puerto del servicio

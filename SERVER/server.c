@@ -79,8 +79,6 @@ SUPERMERCADO recv_messages(int client_sock)
         recv(client_sock, &s.productos[i].costo, sizeof(s.productos[i].costo), 0);
     }
 
-    printf("recibiendo por server: %s, %d, %d, %d, %f, %d, %d, %f\n", s.nombre, s.numeroDePersonas, s.productos[0].id, s.productos[0].cantidadDisponible, s.productos[0].costo, s.productos[1].id, s.productos[1].cantidadDisponible, s.productos[1].costo);
-
     return s;
 }
 
