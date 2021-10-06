@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 	int idProducto;
 	int cantidad;
 	float efectivoDisponible;
-	FILE *f = fopen("superama.txt", "r+"); // read only
+	FILE *f = fopen("superama.txt", "r"); // read only
 
 	SUPERMERCADO superama;
 	superama.nombre = (char *)malloc(20);
