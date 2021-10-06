@@ -23,8 +23,6 @@ int main(int argc, char *argv[])
 	}
 
 	fclose(f); // Closing the read file
-
-	printf("%s,%d,%d,%d,%f,%d,%d,%f", superama.nombre, superama.numeroDePersonas, superama.productos[0].id, superama.productos[0].cantidadDisponible, superama.productos[0].costo, superama.productos[1].id, superama.productos[1].cantidadDisponible, superama.productos[1].costo);
 	
 	if (argc == 1)
 	{
@@ -33,7 +31,10 @@ int main(int argc, char *argv[])
 		{
 			printf("id:%d\n\tCantidad %d\n\tCosto $%f\n\n", superama.productos[i].id, superama.productos[i].cantidadDisponible, superama.productos[i].costo);
 		}
-		
+
+		printf("\nServicios disponibles:\n\n1.- Comprar producto\n");
+		printf("\nUso: %s <servicio> <idProducto> <cantidad> <efectivoDisponible>\n", argv[0]);
+
 		return 0;
 	}
 	
@@ -54,7 +55,7 @@ int main(int argc, char *argv[])
 
 	FILE *write_file = fopen("superama.txt", "w"); // write only
 
-	fprintf(write_file, "%s, %d\n", superama.nombre, superama.numeroDePersonas);
+	fprintf(write_file, "%s %d\n", superama.nombre, superama.numeroDePersonas);
 	
 	for (int i = 0; i < 2; i++)
 	{
